@@ -8,6 +8,9 @@
       <div>
         About
       </div>
+      <div>
+        Contact
+      </div>
     </v-app-bar>
     <v-main>
       <nuxt />
