@@ -21,7 +21,7 @@
   </v-app>
 </template>
 
-<style scoped>
+<style>
 .underline {
   background: var(--v-primary-base) !important;
   border-bottom: 1px solid rgba(0,0,0,.12)

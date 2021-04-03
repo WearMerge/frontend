@@ -6,34 +6,116 @@
       class="form-card"
     >
       <v-card>
-        <v-container>
-          <v-form
-            v-model="valid"
+        <v-container
+          v-if="progress === 0"
+        >
+          <v-row
+            no-gutters
           >
-            <v-container>
-              <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="E-mail"
-                required
-                outlined
+            <v-col>
+              <h1>
+                Wellcome!
+              </h1>
+            </v-col>
+            <v-col>
+              <div
+                align="end"
               >
-              </v-text-field>
+                <v-dialog
+                  v-model="dialog"
+                  width="500"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                      icon
+                      v-bind="attrs"
+                      v-on="on"
+                    >
+                    <v-tooltip
+                      bottom
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                          v-bind="attrs"
+                          v-on="on"
+                        >
+                          mdi-information-outline 
+                        </v-icon>
+                      </template>
+                      <span>Instructions</span>
+                    </v-tooltip>
+                    </v-btn>
+                  </template> 
+                  <v-card>
+                    <v-card-title class="headline grey lighten-2">
+                      Instructions
+                    </v-card-title>
+                    <v-card-text>
+                      Something
+                    </v-card-text>
+                    <v-divider></v-divider>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                        color="primary"
+                        text
+                        @click="dialog = false"
+                      >
+                      close
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+              </div>
+            </v-col>
+          </v-row>
+          <p>
+            Please fill the following fields.
+          </p>
+          <validation-observer
+            ref="observer"
+            v-slot="{ invalid }"
+          >
+            <v-form
+              v-on:submit.prevent="onSubmit"
+            >
+              <validation-provider
+                v-slot="{ errors }"
+                name="E-mail"
+                rules="required|email"
+              >
+                <v-text-field
+                  v-model="email"
+                  :error-messages="errors"
+                  label="E-mail"
+                  required
+                  outlined
+                >
+                </v-text-field>
+              </validation-provider>
               <template>
                 <div
                   v-if="!files.length"
                 >
-                  <v-file-input
-                    v-model="newFiles"
-                    outlined
-                    multiple
-                    prepend-icon=""
-                    label="Add Folder"
-                    placeholder="Select a folder"
-                    webkitdirectory
-                    v-on:change="onAdd"
-                  >
-                  </v-file-input>
+                <validation-provider
+                  v-slot="{ errors }"
+                  name="Add Folder"
+                  rules="required|upload"
+                >
+                    <v-file-input
+                      v-model="newFiles"
+                      outlined
+                      multiple
+                      name="upload"
+                      prepend-icon=""
+                      label="Add Folder"
+                      placeholder="Select a folder"
+                      webkitdirectory
+                      v-on:change="onAdd"
+                      :error-messages="errors"
+                    >
+                    </v-file-input>
+                </validation-provider>
                 </div>
                 <div
                   v-else
@@ -57,36 +139,48 @@
                         bottom
                       >
                         <template v-slot:activator="{ on }">
-                          <v-file-input
-                            v-model="newFiles"
-                            multiple
-                            hide-input
-                            prepend-icon="mdi-paperclip"
-                            webkitdirectory
-                            v-on:change="onAdd"
-                            v-on:click:clear="onClear"
-                            v-on:mouseenter.native="on.mouseenter"
-                            v-on:mouseleave.native="on.mouseleave"
+                          <validation-provider
+                            v-slot="{ errors }"
+                            name="Add Folder"
+                            rules="required|upload"
                           >
-                          </v-file-input>
+                            <v-file-input
+                              v-model="newFiles"
+                              multiple
+                              hide-input
+                              name="upload"
+                              prepend-icon="mdi-paperclip"
+                              webkitdirectory
+                              v-on:change="onAdd"
+                              v-on:click:clear="onClear"
+                              v-on:mouseenter.native="on.mouseenter"
+                              v-on:mouseleave.native="on.mouseleave"
+                              :error-messages="errors"
+                            >
+                            </v-file-input>
+                          </validation-provider>
                         </template>
                         <span>Add Folder</span>
                       </v-tooltip>
                     </div>
-                    <v-tooltip
-                        bottom
-                      >
-                        <template v-slot:activator="{ on }">
-                          <v-icon
-                            v-on:click="onClear"
-                            v-on:mouseenter.native="on.mouseenter"
-                            v-on:mouseleave.native="on.mouseleave"
-                          >
-                            mdi-window-close
-                          </v-icon>
-                        </template>
-                      <span>Clear</span>
-                    </v-tooltip>
+                    <v-btn
+                      icon
+                      v-on:click="onClear"
+                    >
+                      <v-tooltip
+                          bottom
+                        >
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-icon
+                              v-bind="attrs"
+                              v-on="on"
+                            >
+                              mdi-window-close
+                            </v-icon>
+                          </template>
+                        <span>Clear</span>
+                      </v-tooltip>
+                    </v-btn>
                   </v-toolbar>
                   <v-data-table
                     v-if="files.length"
@@ -108,12 +202,35 @@
               <v-btn
                 color="primary"
                 :disabled="invalid"
-                v-on:click="onSubmit"
+                type="submit"
               >
                 submit
               </v-btn>
-            </v-container>
-          </v-form>
+            </v-form>
+          </validation-observer>
+        </v-container>
+        <v-container
+          v-else-if="progress < 100 && progress > 0"
+        >
+          <h1>Upload progress</h1>
+          <p>Please wait while your files are uploading.</p>
+          <v-progress-linear
+            v-model="progress"
+            height="25"
+          >
+            <strong>
+              {{ progress }} %
+            </strong>
+          </v-progress-linear>
+        </v-container>
+        <v-container
+          v-else
+        >
+        <h1>Success</h1>
+        <p>
+          You just received an email from us!<br>
+          Thank you for using our service.
+        </p>
         </v-container>
       </v-card>
     </div>
@@ -134,7 +251,7 @@
         >
           <v-row
             class="tag"
-            align="end "
+            align="end"
             justify="end"
           >
             <v-card
@@ -172,19 +289,50 @@
   position: absolute;
   z-index: 1;
   top: 15%;
-  left: 5%
+  left: 5%;
+  width: 100%;
+  max-width: 500px;
 }
 </style>
 
 <script>
+import { required, email } from 'vee-validate/dist/rules'
+import { extend, ValidationObserver, ValidationProvider, setInteractionMode, Validator } from 'vee-validate'
+
+setInteractionMode('eager')
+
+extend('required', {
+  ...required,
+  message: '{_field_} cannot be empty',
+})
+
+extend('email', {
+  ...email,
+  message: 'Email must be valid',
+})
+
+extend('upload', {
+  getMessage: field => field + 'cannot be empty',
+  validate: value => this.files.length
+})
+
 export default {
+  components: {
+    ValidationProvider,
+    ValidationObserver,
+  },
   methods: {
-    onSubmit () {
+    async onSubmit () {
       let formData = new FormData();
-      // this.files.forEach((file) => {
-      //   formData.append(file);
-      // });
-      console.log(this.files);
+      formData.append('email', this.email);
+      this.files.forEach((file) => {
+       formData.append(file.webkitRelativePath.replace('/' + file.name, ''), file);
+      });
+      await this.$axios.$post('upload-file', formData, {
+        onUploadProgress: (progressEvent) => {
+          this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+        }
+      });
     },
     onAdd () {
       this.files = this.newFiles.concat(this.files);
@@ -240,12 +388,10 @@ export default {
       ],
       valid: false,
       email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
-      ],
       files: [],
-      newFiles: []
+      newFiles: [],
+      progress: 0,
+      dialog: false
     }
   }
 }
