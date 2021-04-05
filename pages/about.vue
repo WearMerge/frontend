@@ -1,0 +1,39 @@
+<template>
+  <v-container>
+    <v-row
+      justify="center"
+    >
+      <h1>About</h1>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <p>Something</p>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <h1>Team</h1>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <v-card>
+        <v-img
+          contain
+          class="align-end"
+          max-height="200"
+          src="/avatar/avatar1.png"
+          style="background: #c4e8f3;"
+        >
+        </v-img>
+        <v-card-title>Dimitrios P. Giakatos</v-card-title>
+        <v-card-text>
+          <div>
+            Something
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-row>
+  </v-container>
+</template>

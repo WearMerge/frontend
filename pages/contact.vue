@@ -1,0 +1,14 @@
+<template>
+    <v-container>
+    <v-row
+      justify="center"
+    >
+      <h1>Contact</h1>
+    </v-row>
+    <v-row
+      justify="center"
+    >
+      <p>Something</p>
+    </v-row>
+  </v-container>
+</template>
