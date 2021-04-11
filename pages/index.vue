@@ -14,7 +14,7 @@
           >
             <v-col>
               <h1>
-                Welcome!
+                Welcome
               </h1>
             </v-col>
             <v-col>
