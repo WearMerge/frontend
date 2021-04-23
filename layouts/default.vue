@@ -2,30 +2,28 @@
   <v-app>
     <v-app-bar dense flat fixed app class="underline" elevate-on-scroll>
       <v-toolbar-title>
-        <NuxtLink to="/">
-          WearMerge
-        </NuxtLink>
+        WearMerge
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-col cols="auto">
-        <NuxtLink to="/about">
+      <v-row no-gutters>
+        <v-btn to="/" rounded text class="my-2">
+          How it works
+        </v-btn>
+        <v-btn to="/about" rounded text class="my-2">
           About
-        </NuxtLink>
-      </v-col>
-      <v-col cols="auto" >
-        <NuxtLink to="/contact">
+        </v-btn>
+        <v-btn to="/contact" rounded text class="my-2">
           Contact
-        </NuxtLink>
-      </v-col>
+        </v-btn>
+      </v-row>
+      <v-spacer></v-spacer>
+      <v-btn to="/" rounded text class="my-2">
+        Bug
+      </v-btn>
     </v-app-bar>
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer
-      v-if="$route.name !== '/'"
-      :absolute="!fixed"
-      app
-    >
+    <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
