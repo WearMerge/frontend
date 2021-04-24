@@ -11,12 +11,9 @@
         <v-btn to="/about" rounded text class="my-2">
           About
         </v-btn>
-        <v-btn to="/contact" rounded text class="my-2">
-          Contact
-        </v-btn>
       </v-row>
       <v-spacer></v-spacer>
-      <v-btn to="/" rounded text class="my-2">
+      <v-btn href="https://github.com/WearMerge/backend/issues" rounded text class="my-2">
         Report Bugs
       </v-btn>
     </v-app-bar>
@@ -24,7 +21,26 @@
       <nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-container>
+        <v-row justify="center">
+          <v-col>
+            Contact:<br>
+            <a href="mailto:wearmerge@outlook.com"><strong>wearmerge@outlook.com</strong></a>
+          </v-col>
+          <v-col align="end">
+            This is an <strong>open source</strong> project. Find us on <a href="https://github.com/WearMerge/"><strong>GitHub</strong></a>.
+          </v-col>
+        </v-row>
+        <v-divider></v-divider>
+        <v-container>
+          <v-row justify="center">
+            <span>&copy; {{ new Date().getFullYear() }} - All rights reserved</span>
+          </v-row>
+          <v-row justify="center">
+            <span>Images from <a href="https://unsplash.com/">Unsplash</a></span>
+          </v-row>
+        </v-container>
+      </v-container>
     </v-footer>
   </v-app>
 </template>

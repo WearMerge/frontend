@@ -14,7 +14,7 @@
           Uploading
         </v-stepper-step>
         <v-divider></v-divider>
-        <v-stepper-step :complete="e1 > 4" step="4">
+        <v-stepper-step :complete="e1 === 4" step="4">
           Summary
         </v-stepper-step>
       </v-stepper-header>
@@ -64,7 +64,7 @@
           </v-progress-linear>
         </v-stepper-content>
         <v-stepper-content step="4">
-          <strong>{{ folders.length }} folders</strong> have uploaded.<br>
+          <strong>{{ folders.length }} folder(s)</strong> have uploaded.<br>
           Check your inbox. Soon you will recieve an email from us.<br>
           Thank you for using our service.
         </v-stepper-content>
@@ -101,7 +101,7 @@
 
 <script>
 import { required, email } from 'vee-validate/dist/rules'
-import { extend, ValidationObserver, ValidationProvider, setInteractionMode, Validator } from 'vee-validate'
+import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
 setInteractionMode('eager')
 
@@ -130,6 +130,9 @@ export default {
       await this.$axios.$post('upload-file', formData, {
         onUploadProgress: (progressEvent) => {
           this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          if (this.progress === 100) {
+            this.e1 = 4;
+          }
         }
       });
     },
