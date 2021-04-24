@@ -5,7 +5,7 @@
         WearMerge
       </v-toolbar-title>
       <v-row no-gutters>
-        <v-btn to="/" rounded text class="my-2">
+        <v-btn to="/how-it-works" rounded text class="my-2">
           How it works
         </v-btn>
         <v-btn to="/about" rounded text class="my-2">
@@ -17,7 +17,7 @@
       </v-row>
       <v-spacer></v-spacer>
       <v-btn to="/" rounded text class="my-2">
-        Bug
+        Report Bugs
       </v-btn>
     </v-app-bar>
     <v-main>
