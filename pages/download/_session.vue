@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      link: (process.env.NODE_ENV === 'production') ? process.env.URL + '/api' + this.$route.fullPath : 'http://localhost:3000' + this.$route.fullPath
+      link: (process.env.NODE_ENV === 'production') ? '/api' + this.$route.fullPath : 'http://localhost:3000' + this.$route.fullPath
     }
   },
   async fetch () {
