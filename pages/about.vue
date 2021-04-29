@@ -12,7 +12,7 @@
       <v-row justify="center">
         <h1>Team</h1>
       </v-row>
-      <v-row justify="center" v-for="(item, i) in team" :key="i">
+      <v-row v-for="(item, i) in team" :key="i" justify="center">
         <v-card>
           <v-img contain class="align-end" max-height="200" :src="item.img">
           </v-img>
@@ -34,18 +34,18 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       team: [
         {
-          img: "/avatar/avatar1.png",
-          name: "Dimitrios P. Giakatos",
-          text: "Something",
-          github: "https://github.com/dpgiakatos",
-          email: "mailto:dgiakatos@csd.auth.gr"
-        }
-      ]
+          img: '/avatar/avatar1.png',
+          name: 'Dimitrios P. Giakatos',
+          text: 'Something',
+          github: 'https://github.com/dpgiakatos',
+          email: 'mailto:dgiakatos@csd.auth.gr',
+        },
+      ],
     }
-  }
+  },
 }
 </script>

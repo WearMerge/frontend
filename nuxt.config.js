@@ -8,11 +8,11 @@ export default {
   target: 'static',
 
   server: {
-    port: 4200
+    port: 4200,
   },
 
   generate: {
-    fallback: true
+    fallback: true,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -34,9 +34,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {src: '~/plugins/vee-validate'}
-  ],
+  plugins: [{ src: '~/plugins/vee-validate' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -59,7 +57,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: (process.env.NODE_ENV === 'production') ? '/api' : 'http://localhost:3000/'
+    baseURL:
+      process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3000/',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -77,7 +76,7 @@ export default {
           // error: colors.deepOrange.accent4,
           // success: colors.green.accent3,
         },
-        dark: {}
+        dark: {},
       },
     },
   },
