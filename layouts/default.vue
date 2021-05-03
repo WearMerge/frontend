@@ -1,7 +1,16 @@
 <template>
   <v-app>
     <v-app-bar dense flat fixed app class="underline" elevate-on-scroll>
-      <v-toolbar-title> WearMerge </v-toolbar-title>
+      <v-toolbar-title>
+        <router-link to="/">
+          <v-img
+            src="/logo.png"
+            max-width="130"
+            height="100%"
+            alt="WearMerge"
+          ></v-img>
+        </router-link>
+      </v-toolbar-title>
       <v-row no-gutters>
         <v-btn to="/how-it-works" rounded text class="my-2">
           How it works
