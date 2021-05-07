@@ -1,7 +1,9 @@
 <template>
-  <v-container>
-    <header>
-      <h1 class="heading h2">HOW IT WORKS</h1>
+  <div>
+    <header class="header">
+      <v-row justify="center">
+        <h1 class="heading h2">HOW IT WORKS</h1>
+      </v-row>
     </header>
     <section class="section">
       <v-row justify="center">
@@ -15,7 +17,7 @@
             <i>*Each data folder must match to a seperated brand.</i>
           </p>
         </v-col>
-        <v-col>
+        <v-col offset="1">
           <picture>
             <source
               srcset="/how-it-works/img1.jpg"
@@ -30,8 +32,8 @@
         </v-col>
       </v-row>
     </section>
-    <section lass="section">
-      <v-row>
+    <section class="section">
+      <v-row justify="center">
         <v-col>
           <picture>
             <source
@@ -45,7 +47,7 @@
             ></v-img>
           </picture>
         </v-col>
-        <v-col>
+        <v-col offset="1">
           <h2>Security</h2>
           <p>
             Your data is safe. We delete your uploaded data after the completion
@@ -56,7 +58,7 @@
         </v-col>
       </v-row>
     </section>
-    <section lass="section">
+    <section class="section">
       <v-row justify="center">
         <v-col>
           <h2>Transformation</h2>
@@ -66,7 +68,7 @@
             will not need to examine each wearable brand separated.
           </p>
         </v-col>
-        <v-col>
+        <v-col offset="1">
           <picture>
             <source
               srcset="/how-it-works/img1.jpg"
@@ -81,8 +83,8 @@
         </v-col>
       </v-row>
     </section>
-    <section lass="section">
-      <v-row>
+    <section class="section">
+      <v-row justify="center">
         <v-col>
           <picture>
             <source
@@ -96,7 +98,7 @@
             ></v-img>
           </picture>
         </v-col>
-        <v-col>
+        <v-col offset="1">
           <h2>Data export</h2>
           <p>
             After the data transformation you will recieve an email from us with
@@ -107,7 +109,7 @@
         </v-col>
       </v-row>
     </section>
-    <section lass="section">
+    <section class="section">
       <v-row justify="center">
         <v-col>
           <h2>Report pages (Comming soon)</h2>
@@ -117,7 +119,7 @@
             ways to view different data types.
           </p>
         </v-col>
-        <v-col>
+        <v-col offset="1">
           <picture>
             <source
               srcset="/how-it-works/img1.jpg"
@@ -132,10 +134,13 @@
         </v-col>
       </v-row>
     </section>
-  </v-container>
+  </div>
 </template>
 
 <style>
+.header {
+  padding-top: 10px;
+}
 .section {
   padding-top: 92px;
   padding-bottom: 92px;

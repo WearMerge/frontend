@@ -28,7 +28,9 @@
       </v-btn>
     </v-app-bar>
     <v-main>
-      <nuxt />
+      <v-container class="page">
+        <nuxt />
+      </v-container>
     </v-main>
     <v-footer :absolute="!fixed" app>
       <v-container>
@@ -97,8 +99,7 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 .page {
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 </style>
