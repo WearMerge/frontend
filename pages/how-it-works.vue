@@ -37,11 +37,11 @@
         <v-col>
           <picture>
             <source
-              srcset="/how-it-works/img1.jpg"
+              srcset="/how-it-works/img2.jpg"
               media="(min-width: 1200px)"
             />
             <v-img
-              src="/how-it-works/img1.jpg"
+              src="/how-it-works/img2.jpg"
               alt="img1"
               max-width="500"
             ></v-img>
@@ -71,11 +71,11 @@
         <v-col offset="1">
           <picture>
             <source
-              srcset="/how-it-works/img1.jpg"
+              srcset="/how-it-works/img3.jpg"
               media="(min-width: 1200px)"
             />
             <v-img
-              src="/how-it-works/img1.jpg"
+              src="/how-it-works/img3.jpg"
               alt="img1"
               max-width="500"
             ></v-img>
@@ -88,11 +88,11 @@
         <v-col>
           <picture>
             <source
-              srcset="/how-it-works/img1.jpg"
+              srcset="/how-it-works/img4.jpg"
               media="(min-width: 1200px)"
             />
             <v-img
-              src="/how-it-works/img1.jpg"
+              src="/how-it-works/img4.jpg"
               alt="img1"
               max-width="500"
             ></v-img>
@@ -112,7 +112,7 @@
     <section class="section">
       <v-row justify="center">
         <v-col>
-          <h2>Report pages (Comming soon)</h2>
+          <h2>Report pages (Alpha version)</h2>
           <p>
             Do you want to get live stats in yor data but you do not want to get
             mess with other softwares? Our report pages offer you a variety of
@@ -122,11 +122,11 @@
         <v-col offset="1">
           <picture>
             <source
-              srcset="/how-it-works/img1.jpg"
+              srcset="/how-it-works/img5.jpg"
               media="(min-width: 1200px)"
             />
             <v-img
-              src="/how-it-works/img1.jpg"
+              src="/how-it-works/img5.jpg"
               alt="img1"
               max-width="500"
             ></v-img>

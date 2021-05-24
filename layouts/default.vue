@@ -56,7 +56,7 @@
           </v-row>
           <v-row justify="center">
             <span>
-              Images from <a href="https://unsplash.com/">Unsplash</a>
+              Images from <a href="https://unsplash.com/">Unsplash</a> and <a href="https://pixabay.com/">Pixabay</a>
             </span>
           </v-row>
         </v-container>
@@ -99,7 +99,7 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 .page {
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 15% !important;
+  padding-right: 15% !important;
 }
 </style>
