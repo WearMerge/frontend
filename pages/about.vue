@@ -19,8 +19,8 @@
     </header>
     <section class="section">
       <v-row justify="center">
-        <v-col v-for="(item, i) in team" :key="i" md="3">
-          <v-card class="card">
+        <v-col v-for="(item, i) in team" :key="i" class="col-body">
+          <v-card class="card-team">
             <v-img contain class="align-end" max-height="200" :src="item.img">
             </v-img>
             <v-card-title>{{ item.name }}</v-card-title>
@@ -87,7 +87,10 @@ export default {
   padding-top: 92px;
   padding-bottom: 92px;
 }
-.card {
-  width: 300px;
+.card-team {
+  width: 200;
+}
+.col-body {
+  flex-grow: 0 !important;
 }
 </style>

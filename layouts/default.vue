@@ -11,7 +11,7 @@
           ></v-img>
         </router-link>
       </v-toolbar-title>
-      <v-row no-gutters>
+      <v-row v-if="!$vuetify.breakpoint.xsOnly" no-gutters>
         <v-btn to="/how-it-works" rounded text class="my-2">
           How it works
         </v-btn>
@@ -19,6 +19,7 @@
       </v-row>
       <v-spacer></v-spacer>
       <v-btn
+        v-if="!$vuetify.breakpoint.xsOnly"
         href="https://github.com/WearMerge/backend/issues"
         rounded
         text
@@ -26,6 +27,24 @@
       >
         Report Bugs
       </v-btn>
+      <v-menu v-if="$vuetify.breakpoint.xsOnly">
+        <template #activator="{ on, attrs }">
+          <v-btn v-bind="attrs" color="primary" v-on="on"> Menu </v-btn>
+        </template>
+        <v-list>
+          <v-list-item-title>
+            <v-btn text to="/how-it-works"> How it works </v-btn>
+          </v-list-item-title>
+          <v-list-item-title>
+            <v-btn text to="/about"> About </v-btn>
+          </v-list-item-title>
+          <v-list-item-title>
+            <v-btn text href="https://github.com/WearMerge/backend/issues">
+              Report Bugs
+            </v-btn>
+          </v-list-item-title>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-main>
       <v-container class="page">
@@ -41,7 +60,7 @@
               <strong>wearmerge@outlook.com</strong>
             </a>
           </v-col>
-          <v-col align="end">
+          <v-col align="end" xs="1">
             This is an <strong>open source</strong> project. Find us on
             <a href="https://github.com/WearMerge/"><strong>GitHub</strong></a>
             .
@@ -56,7 +75,8 @@
           </v-row>
           <v-row justify="center">
             <span>
-              Images from <a href="https://unsplash.com/">Unsplash</a> and <a href="https://pixabay.com/">Pixabay</a>
+              Images from <a href="https://unsplash.com/">Unsplash</a> and
+              <a href="https://pixabay.com/">Pixabay</a>
             </span>
           </v-row>
         </v-container>
