@@ -86,6 +86,14 @@
               >
                 Submit
               </v-btn>
+              <br />
+              <span>
+                By submitting, you agree to our
+                <NuxtLink to="terms-of-service">Terms of Service</NuxtLink> and
+                <NuxtLink to="privacy-and-cookie"
+                  >Privacy &amp; Cookie Statement</NuxtLink
+                >.
+              </span>
             </v-stepper-content>
           </v-form>
         </validation-observer>

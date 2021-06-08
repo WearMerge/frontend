@@ -8,7 +8,28 @@
     <section class="section">
       <v-row justify="center">
         <v-col>
-          <p>Thesis abstract (comming soon).</p>
+          <p>
+            Today, more and more people use wearable devices that include
+            various sensors used to take measurements during people's daily
+            lives. As a result, people's activities are recorded on these
+            devices, which can be accessed through data extraction. However, if
+            one tries to read the wearable devices' extracted data, one will
+            discover no uniformity in the data. That happens because each
+            company exports its user data to its standard, making it impossible
+            to consolidate all. For the above reason, the problem of integrating
+            data from different wearables is obvious. We try to solve this
+            problem in this thesis by developing a web application and an open
+            API. However, another step taken was to create class diagrams that
+            describe the standards used by the top 6 companies that construct
+            wearable devices, which we examine in this thesis. These diagrams
+            were made because we had to find out what data these companies
+            export to proceed with the implementation of the integration tool.
+            Finally, the embedded data use an open-source standard (Open
+            mHealth) for their standardization. This approach has the advantage
+            that they can be easily used in other applications with the same
+            standard after being exported from WearMerge, our thesis web
+            application.
+          </p>
         </v-col>
       </v-row>
     </section>
