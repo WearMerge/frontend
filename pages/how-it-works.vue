@@ -1,11 +1,11 @@
 <template>
   <div>
-    <header class="header">
+    <header class="after-header">
       <v-row justify="center">
         <h1 class="heading h2">HOW IT WORKS</h1>
       </v-row>
     </header>
-    <section class="section">
+    <section class="section page">
       <v-row justify="center">
         <v-col v-for="(item, i) in items" :key="i" class="col-body">
           <v-card class="card">
@@ -63,8 +63,10 @@ export default {
 </script>
 
 <style>
-.header {
-  padding-top: 10px;
+.after-header {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background: #fdc800;
 }
 .section {
   padding-top: 92px;
@@ -76,5 +78,11 @@ export default {
 }
 .col-body {
   flex-grow: 0 !important;
+}
+.page {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+  padding-bottom: 6% !important;
+  padding-top: 6% !important;
 }
 </style>
