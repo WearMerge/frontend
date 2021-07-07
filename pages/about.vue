@@ -1,11 +1,11 @@
 <template>
   <div>
-    <header class="header">
+    <header class="after-header">
       <v-row justify="center">
         <h1 class="heading h2">ABOUT</h1>
       </v-row>
     </header>
-    <section class="section">
+    <section class="section page">
       <v-row justify="center">
         <v-col>
           <p>
@@ -42,7 +42,7 @@
       <v-row justify="center">
         <v-col v-for="(item, i) in team" :key="i" class="col-body">
           <v-card class="card-team">
-            <v-img contain class="align-end" max-height="200" :src="item.img">
+            <v-img contain class="align-end avatar" max-height="200" :src="item.img">
             </v-img>
             <v-card-title>{{ item.name }}</v-card-title>
             <v-card-text>{{ item.text }}</v-card-text>
@@ -67,32 +67,39 @@ export default {
     return {
       team: [
         {
-          img: '/avatar/avatar.png',
+          img: '/avatar/avakali.jpg',
           name: 'Athena Vakali',
           text: 'Professor',
           github: '',
           email: 'mailto:avakali@csd.auth.gr',
         },
         {
-          img: '/avatar/avatar.png',
+          img: '/avatar/syfantidou.jpg',
           name: 'Sofia Yfantidou',
           text: 'Supervisor',
           github: 'https://github.com/syfantid',
           email: 'mailto:s.yfantidou@gmail.com',
         },
         {
-          img: '/avatar/avatar.png',
+          img: '/avatar/sefstathiou.jpg',
           name: 'Stefanos Efstathiou',
           text: 'Supervisor',
           github: 'https://github.com/efstathio',
           email: 'mailto:efstathiou.stefanos@gmail.com',
         },
         {
-          img: '/avatar/avatar.png',
+          img: '/avatar/dgiakatos.jpg',
           name: 'Dimitrios P. Giakatos',
-          text: 'Developer',
+          text: 'Full Stack Developer',
           github: 'https://github.com/dpgiakatos',
           email: 'mailto:dgiakatos@csd.auth.gr',
+        },
+        {
+          img: '/avatar/skaramanidis.jpg',
+          name: 'Stelios Karamanidis',
+          text: 'Frontend Developer',
+          github: 'https://github.com/skaram82',
+          email: 'mailto:skaraman@csd.auth.gr',
         },
       ],
     }
@@ -101,8 +108,10 @@ export default {
 </script>
 
 <style>
-.header {
-  padding-top: 10px;
+.after-header {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background: #fdc800;
 }
 .section {
   padding-top: 92px;
@@ -113,5 +122,15 @@ export default {
 }
 .col-body {
   flex-grow: 0 !important;
+}
+.page {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+  padding-bottom: 6% !important;
+  padding-top: 6% !important;
+}
+
+.avatar {
+  max-height: 250px !important;
 }
 </style>
