@@ -52,9 +52,9 @@ export default {
         },
         {
           img: '/how-it-works/img5.jpg',
-          title: 'Report pages (Alpha version)',
+          title: 'Data visualization (Alpha version)',
           text:
-            'Do you want to get live stats in yor data but you do not want to get mess with other softwares? Our report pages offer you a variety of ways to view different data types.',
+            'Do you want to get live stats in your data but you do not want to get mess with other softwares? Our data visualization offer you a variety of ways to view different data types.',
         },
       ],
     }
