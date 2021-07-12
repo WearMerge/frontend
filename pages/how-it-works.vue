@@ -9,7 +9,7 @@
       <v-row justify="center">
         <v-col v-for="(item, i) in items" :key="i" class="col-body">
           <v-card class="card">
-            <v-img contain class="align-end" :src="item.img"></v-img>
+            <v-img height="300" contain class="align-end" :src="item.img"></v-img>
             <v-card-title>{{ item.title }}</v-card-title>
             <v-card-text>
               <p v-html="item.text">{{ item.text }}</p>
