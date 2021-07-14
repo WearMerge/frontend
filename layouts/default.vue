@@ -65,13 +65,13 @@
         </v-row>
         <v-row justify="center pb-10">
           <v-col>
-            <a href="mailto:wearmerge@outlook.com">
-              <v-icon class="footer-icons">fa fa-envelope</v-icon>&nbsp;&nbsp;<strong>wearmerge@outlook.com</strong>
+            <a href="mailto:wearmerge@outlook.com" class="footer-icons-yellow">
+              <v-icon class="footer-icons-yellow">fa fa-envelope</v-icon>&nbsp;&nbsp;<strong>wearmerge@outlook.com</strong>
             </a>
           </v-col>
           <v-col align="end" xs="1">
             This is an <strong>open source</strong> project. Find us on
-            <a href="https://github.com/WearMerge/">&nbsp;&nbsp;<v-icon class="footer-icons">fa fa-github</v-icon></a>
+            <a href="https://github.com/WearMerge/">&nbsp;&nbsp;<v-icon class="footer-icons-yellow">fa fa-github</v-icon></a>
           </v-col>
         </v-row>
         <v-divider style="background: #032b44"></v-divider>
@@ -150,5 +150,11 @@ a:hover {
 }
 .footer-icons:hover {
   color: #01926a !important;
+}
+.footer-icons-yellow {
+  color: #fdc800 !important;
+}
+.footer-icons-yellow:hover {
+  color: #fdc800 !important;
 }
 </style>
