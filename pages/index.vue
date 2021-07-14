@@ -1,18 +1,20 @@
 <template>
   <div class="main-body">
-    <v-container fluid style="padding:0; margin:0; height: 72.5vh;">
+    <v-container fluid class="hero">
           <v-row>
-            <v-col cols="12" md="5" lg="6" class="pa-2 px-16 mt-auto mb-auto">
-              <div mx-auto class="hero-titles pt-12">
-              <h1>WearMerge</h1>
-              <h2>Working with heterogeneous wearables data made easy</h2>
+            <v-col cols="12" sm="5" md="5" lg="6" class="pa-2 px-16 mt-auto mb-auto">
+              <div mx-auto class="pt-12">
+              <h1 class="hero-title-h1">WearMerge</h1>
+              <h2 class="hero-title-h2">Working with heterogeneous wearables data made easy</h2>
               </div>
             </v-col>
-            <v-col cols="12" md="7" lg="6" class="pa-2 pl-10">
+            <v-col cols="12" sm="7" md="7" lg="6" class="pa-2 pl-10">
+              <div class="float-right">
               <img src="/wearmerge_heroimg.png"
               alt="WearMerge hero image"
-              class="hero-img ml-auto mr-0 d-block"
+              class="hero-img"
               />
+              </div>
             </v-col>
           </v-row>
     </v-container>
@@ -290,25 +292,59 @@ export default {
   padding-bottom: 6% !important;
   padding-top: 6% !important;
 }
+
+.hero {
+  padding: 0;
+  margin: 0;
+  height: 65vh;
+}
+
 .hero-img {
-  max-height: 70vh !important;
+  max-height: 60vh !important;
 }
-@media screen and (max-width: 959px){
-  .hero-img {
-    max-height: 60% !important;
-  }
-}
-.hero-img .v-image__image--cover {
-  background-size: contain !important;
-}
-.hero-titles h1 {
+
+.hero-title-h1 {
   font-size: 3em !important;
   color: #032b44 !important;
 }
-.hero-titles h2 {
+
+.hero-title-h2 {
   font-size: 1.8em !important;
   color: #04d89d !important;
 }
+
+@media screen and (min-width: 601px) and (max-width: 960px){
+  .hero {
+    height: 50vh !important;
+  }
+  .hero-img {
+    max-height: 42vh !important;
+  }
+  .hero-title-h1 {
+  font-size: 2.0em !important;
+  }
+  .hero-title-h2 {
+  font-size: 1.3em !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 75vh !important;
+  }
+  .hero-img {
+    max-height: 52vh !important;
+  }
+  .hero-title-h1 {
+  font-size: 2.0em !important;
+  text-align: center !important;
+  }
+  .hero-title-h2 {
+  font-size: 1.3em !important;
+  text-align: center !important;
+  }
+}
+
 .info-section {
   background: #f4f4f4 !important;
 }
